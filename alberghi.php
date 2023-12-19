@@ -53,6 +53,7 @@
 ?>
 
 <body>
+
 <table class="table table-dark table-striped">
   <thead>
     <tr>
@@ -70,7 +71,12 @@
         echo "<tr>";
             echo "<td>" . $hotel["name"] . "</td>";
             echo "<td>" . $hotel["description"] . "</td>";
-            echo "<td>" . $hotel["parking"] . "</td>";
+            if ($hotel["parking"] == true) {
+                echo "<td> Si </td>";
+            } else {
+                echo "<td> No </td>";
+
+            }
             echo "<td>" . $hotel["vote"] . "</td>";
             echo "<td>" . $hotel["distance_to_center"] . " km" . "</td>";
         echo "</tr>";
@@ -80,6 +86,6 @@
     ?>
   </tbody>
 </table>
-    
+
 </body>
 </html>

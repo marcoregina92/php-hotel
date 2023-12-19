@@ -11,5 +11,6 @@
         <input type="number" name="vote" min="1" max="5" name="vote">
         <button type="submit"> Cerca </button>
     </form>
+    <a href="alberghi.php"> Torna nella Homepage </a>
 </body>
 </html>

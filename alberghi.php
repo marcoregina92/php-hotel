@@ -1,6 +1,6 @@
 
 <?php
-$voto = $_GET["vote"];
+$voto = $_GET["vote"] ?? "";
 ?>
 
 <!DOCTYPE html>
@@ -76,6 +76,20 @@ $voto = $_GET["vote"];
     
     foreach ($hotels as $hotel) {
         if ($voto == $hotel["vote"]) {
+            echo "<tr>";
+                echo "<td>" . $hotel["name"] . "</td>";
+                echo "<td>" . $hotel["description"] . "</td>";
+                if ($hotel["parking"] == true) {
+                    echo "<td> Si </td>";
+                } else {
+                    echo "<td> No </td>";
+    
+                }
+                echo "<td>" . $hotel["vote"] . "</td>";
+                echo "<td>" . $hotel["distance_to_center"] . " km" . "</td>";
+            echo "</tr>";
+        }
+        if ($voto=="") {
             echo "<tr>";
                 echo "<td>" . $hotel["name"] . "</td>";
                 echo "<td>" . $hotel["description"] . "</td>";

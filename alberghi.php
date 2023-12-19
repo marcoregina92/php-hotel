@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Trova il tuo Hotel!</title>
 </head>
 <!-- Array di hotels -->
@@ -53,21 +53,33 @@
 ?>
 
 <body>
-    <?php
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome Hotel</th>
+      <th scope="col">Descrizione</th>
+      <th scope="col">Parking</th>
+      <th scope="col">Voto</th>
+      <th scope="col">Distanza dal centro</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php
     
     foreach ($hotels as $hotel) {
-        echo $hotel["name"];
-        echo "<br>";
-        echo "<br>";
-        echo "Voto: " . $hotel["vote"];
-        echo "<br>";
-        echo "<br>";
-        echo "Distanza dal centro: " . $hotel["distance_to_center"] . " km";
-        echo "<br>";
-        echo "<br>";
+        echo "<tr>";
+            echo "<td>" . $hotel["name"] . "</td>";
+            echo "<td>" . $hotel["description"] . "</td>";
+            echo "<td>" . $hotel["parking"] . "</td>";
+            echo "<td>" . $hotel["vote"] . "</td>";
+            echo "<td>" . $hotel["distance_to_center"] . " km" . "</td>";
+        echo "</tr>";
+
     }
 
     ?>
+  </tbody>
+</table>
     
 </body>
 </html>

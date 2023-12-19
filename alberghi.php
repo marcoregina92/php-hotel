@@ -52,7 +52,22 @@
 ?>
 
 <body>
-    <?php ciao ?>
+    <?php
+    
+    foreach ($hotels as $hotel) {
+        echo $hotel["name"];
+        echo "<br>";
+        echo "<br>";
+        echo $hotel["vote"];
+        echo "<br>";
+        echo "<br>";
+        echo $hotel["distance_to_center"];
+        echo "<br>";
+        echo "<br>";
+
+    }
+
+    ?>
     
 </body>
 </html>
